@@ -1,7 +1,3 @@
-// ===========================
-// CoreCleen Solutions Ltd
-// JavaScript functionality
-// ===========================
 
 document.addEventListener('DOMContentLoaded', () => {
     // --- Mobile Navigation Toggle ---
