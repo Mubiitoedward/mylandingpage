@@ -75,15 +75,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- Custom confirmation dialog ---
+    const confirmOverlay = document.getElementById('confirm-overlay');
+    const confirmMessage = document.getElementById('confirm-message');
+    const confirmOk = document.getElementById('confirm-ok');
+
+    function showConfirm(message) {
+        confirmMessage.textContent = message;
+        confirmOverlay.classList.add('active');
+    }
+
+    confirmOk.addEventListener('click', () => {
+        confirmOverlay.classList.remove('active');
+    });
+
     // --- Form submission ---
     const quoteForm = document.getElementById('quote-form');
     quoteForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const formData = new FormData(quoteForm);
         const name = formData.get('name');
-        alert(`Thank you, ${name}! Your request has been submitted. We'll get back to you within 24 hours.`);
         quoteForm.reset();
         closeModal();
+        showConfirm(`Thank you, ${name}! Your request has been submitted. We'll get back to you shortly.`);
     });
 
     // --- Scroll Animation (Fade-in on scroll) ---
