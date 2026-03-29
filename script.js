@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Custom confirmation dialog
+  // ..Custom confirmation dialog
   const confirmOverlay = document.getElementById("confirm-overlay");
   const confirmMessage = document.getElementById("confirm-message");
   const confirmOk = document.getElementById("confirm-ok");
